@@ -1,0 +1,19 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "jam": {
+    "baseUrl": "public" ,        
+    "packageDir":"public/libs"
+  },
+  "dependencies": {
+    "express": "3.0.2",
+    "jade": "*",
+    "ejs" : "*",
+	"mongoose":"*",
+	"underscore": "*"
+  }
+}
