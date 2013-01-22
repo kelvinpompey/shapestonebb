@@ -14,6 +14,11 @@ var jam = {
             "name": "backbone",
             "location": "libs/backbone",
             "main": "backbone.js"
+        },
+        {
+            "name": "async",
+            "location": "libs/async",
+            "main": "./lib/async"
         }
     ],
     "version": "0.2.13",
@@ -48,6 +53,11 @@ if (typeof require !== "undefined" && require.config) {
             "name": "backbone",
             "location": "libs/backbone",
             "main": "backbone.js"
+        },
+        {
+            "name": "async",
+            "location": "libs/async",
+            "main": "./lib/async"
         }
     ],
     "shim": {
@@ -81,6 +91,11 @@ else {
             "name": "backbone",
             "location": "libs/backbone",
             "main": "backbone.js"
+        },
+        {
+            "name": "async",
+            "location": "libs/async",
+            "main": "./lib/async"
         }
     ],
     "shim": {
