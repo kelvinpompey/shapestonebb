@@ -34,3 +34,19 @@ a {
 	min-width: 200px;
 	min-height: 200px;
 }
+
+.taskboard .title {
+	background-color: #FFFFCC;
+	text-align: center;
+}
+
+.activity {
+	position: absolute;
+	top: 20px;
+	min-width: 200px;
+	min-height: 200px;
+	background-color: #99FFFF;
+	box-shadow: 3px 3px 3px #888;
+
+}
+
