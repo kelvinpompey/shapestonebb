@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , projectRoute = require('./routes/project')
   , http = require('http')
   , mongoose = require('mongoose')
   , projectModel = require('./models/project')
@@ -32,6 +33,7 @@ app.configure('development', function(){
 
 var db = mongoose.connect("mongodb://localhost/shapestonedb");
 
+app.get('/projects.json', projectRoute.index); 
 app.get('/*', routes.index);
 app.get('/users', user.list);
 
@@ -40,8 +42,6 @@ var run = function() {
     console.log("Express server listening on port " + app.get('port'));  
   });  
 }
-
-
 
 console.log("require.main: " + require.main); 
 if(require.main === module) {

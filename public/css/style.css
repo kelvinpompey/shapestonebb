@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
+  margin, padding: 0px; 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.listview li {
+	list-style-type: none;
+}
+
+.listview li.selected {
+	background-color: silver;
+}
+
+.gridview li {
+	margin: 2px;
+	list-style-type: none;	
+	float: left;
+	height: 100px;
+	width: 100px;
+	background-color: yellow;
+}
+
+.gridview li.selected {
+	background-color: silver;
 }
