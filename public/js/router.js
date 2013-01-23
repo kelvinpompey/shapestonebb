@@ -7,6 +7,7 @@ define([
 		var Router = Backbone.Router.extend({
 			routes: {
 				"": 'homeRoute',
+        "register": "registerRoute",
 				"taskboard": "taskboardRoute",
 				"*actions" : 'defaultRoute'
 			},
@@ -15,8 +16,8 @@ define([
 				console.log('Initializing router');
 				console.log(window.location.pathname); 
 				var path = window.location.pathname.slice(1); 
-				route = this.routes[path];
-				if(route != undefined) {
+				var route = this.routes[path];
+				if(route !== undefined) {
 					this[route](); 
 				}
 				else {
@@ -37,6 +38,15 @@ define([
 
 			},
 
+      registerRoute: function() {  			
+				require(['js/views/registrationview'], function(RegistrationView) {
+					var view = new RegistrationView({
+						el: "#appmain"
+					});
+					view.render();
+				});          
+      }, 
+      
 			taskboardRoute: function(){
 				console.log('taskboardRoute');
 				var appView = new AppView({ model : new Backbone.Model({ content: 'Taskboard'}) });				

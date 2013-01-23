@@ -1,6 +1,16 @@
+body, header, h1, h2, ul, li {
+  padding: 0;   
+  margin: 0;     
+}
+
 body {
-  margin, padding: 0px; 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 10pt "Lucida Grande", Helvetica, Arial, sans-serif;    
+}
+
+.register { 
+  background-color: blue; 
+  background-color: rgba(36, 84, 179, 0.8);   
+  padding: 5px; 
 }
 
 a {
@@ -9,6 +19,24 @@ a {
 
 .listview li {
 	list-style-type: none;
+}
+
+.navbar {
+  position: absolute;
+  right: 0; 
+  top: 0;
+  padding: 5px; 
+}
+
+.navbar li {
+  list-style-type: none; 
+  display: inline;
+  margin-left: 10px;
+  padding: 2px; 
+}
+
+.navbar li.selected {
+  background-color: silver;
 }
 
 .listview li.selected {
@@ -43,10 +71,45 @@ a {
 .activity {
 	position: absolute;
 	top: 20px;
-	min-width: 200px;
+	width: 200px;
 	min-height: 200px;
 	background-color: #99FFFF;
 	box-shadow: 3px 3px 3px #888;
 
+}
+
+.activity:hover {
+	border-style: solid;
+	border-color: yellow;
+	border-width: 1px;
+}
+
+.registerimage {
+  background-image: url('/images/background.jpg');
+  position: relative; 
+  color: white; 
+}
+
+.tagline {
+  font-size: 10pt; 
+  padding: 2px; 
+}
+
+.brand {
+  font-size: 12pt;
+  font-weight: bold; 
+}
+
+.registerForm {
+  position: absolute; 
+  background-color: #666; 
+  background-color: rgba(0, 0, 0,0.5); 
+  padding: 10px;   
+  width: 200px; 
+  left: 400px; 
+}
+
+.registerForm label {
+  display: none; 
 }
 

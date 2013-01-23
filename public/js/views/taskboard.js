@@ -11,7 +11,7 @@ define([
 			events: {
 				'click':'itemClicked'
 			}, 
-
+			subViews: [], 
 			initialize: function() {
 				var self = this; 
 				_.bindAll(this, 'itemClicked'); 
@@ -45,22 +45,42 @@ define([
 				console.log('collection reset', collection);
 				this.model = collection.first(); 
 				console.log(this.model, this.model.activityCollection()); 
+				this.model.collection.on('add', this.collectionAdd, this);
+
 				this.render(); 
 			}, 
 
-			addActivity: function(model) { 
-				console.log('add activity', model); 
-				var view = new ActivityView({
-					model: model
-				}); 
+			collectionAdd: function(model) {
+				console.log('new model added ', this.model.collection.length, model); 
+				this.addActivity(model, this.model.collection.length - 1);
+			},
 
+			addActivity: function(model, index) {
+				var lastView = _.last(this.subViews); 		
+				var left = 0;
+				var width = 0;  
+				if(lastView) {
+					left = parseInt(_.first(lastView.$el.css('left').split('px'))); 		
+					width = parseInt(_.first(lastView.$el.css('width').split('px')));
+					console.log('lastview', lastView !== undefined ? left + ":" + width : 'nolastview');
+				}				
+				
+				var view = new ActivityView({
+					model: model, 
+					attributes: {
+						style: ["left:" + (left + width) + "px", 
+										"width: 200px"].join(';') 
+					}
+				}); 
+				this.subViews.push(view); 
+				window.view = view;
 				this.$el.append(view.render().el); 
 			}, 
 
 			itemClicked: function(event) {
 				console.log('project clicked', this.model.collection.url);
 				var activity = this.model.collection.create({
-					title: 'Second Activity'
+					title: 'Activity ' + this.model.collection.length
 				}); 
 				console.log(activity); 
 			}

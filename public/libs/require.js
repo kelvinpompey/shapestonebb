@@ -2013,6 +2013,11 @@ var jam = {
             "name": "async",
             "location": "libs/async",
             "main": "./lib/async"
+        },
+        {
+            "name": "text",
+            "location": "libs/text",
+            "main": "text.js"
         }
     ],
     "version": "0.2.13",
@@ -2052,6 +2057,11 @@ if (typeof require !== "undefined" && require.config) {
             "name": "async",
             "location": "libs/async",
             "main": "./lib/async"
+        },
+        {
+            "name": "text",
+            "location": "libs/text",
+            "main": "text.js"
         }
     ],
     "shim": {
@@ -2090,6 +2100,11 @@ else {
             "name": "async",
             "location": "libs/async",
             "main": "./lib/async"
+        },
+        {
+            "name": "text",
+            "location": "libs/text",
+            "main": "text.js"
         }
     ],
     "shim": {

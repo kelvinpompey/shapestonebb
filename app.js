@@ -33,7 +33,9 @@ app.configure('development', function(){
 
 var db = mongoose.connect("mongodb://localhost/shapestonedb");
 
+console.dir(projectRoute); 
 app.get('/projects.json', projectRoute.index); 
+app.post('/project/:projectid/activities.json', projectRoute.activities); 
 app.get('/*', routes.index);
 app.get('/users', user.list);
 
