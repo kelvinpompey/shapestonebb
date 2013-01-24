@@ -10,6 +10,10 @@ define([
   
   function($, _, Backbone, NavBar, ListViewCollection, FormView, InputModel, FormInputCollection){
   var RegistrationView = Backbone.View.extend({
+    initialize: function() {
+      Backbone.Events.on('listView:selectionChanged',this.selectionChanged); 
+    }, 
+    
     render: function() {      
       $("body").addClass('registerimage');
       $(document.body).height($(window).height());      
@@ -54,7 +58,11 @@ define([
       this.$el.append(bottomBar.render().el); 
       return this; 
       
-    }  
+    }, 
+    
+    selectionChanged: function(sender, model) {
+      console.log('selectionChanged', sender.cid, model.get('content'), model.get('action'));
+    }
   }); 
   
   return RegistrationView; 
