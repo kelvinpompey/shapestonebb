@@ -109,8 +109,9 @@ a {
   position: absolute; 
   background-color: #666; 
   background-color: rgba(0, 0, 0,0.5); 
+  padding: 10px; 
   
-  width: 200px; 
+  width: 300px; 
   left: 400px; 
 }
 
@@ -119,11 +120,29 @@ a {
 }
 
 .registerForm input[type=text] {
-  width: 100%;
+  text-align: center; 
+  width: 97%;
+  padding: 5px; 
 }
 
 .registerForm input[type=password] {
-  width: 100%; 
+  text-align: center;
+  width: 97%; 
+  padding: 5px; 
 }
 
+.registerForm input[type=submit] {
+  font-weight: bold; 
+  padding: 5px; 
+  color: white; 
+  border-radius: 2px; 
+  background-color: #00b7ff; 
+  display: block;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 100px; 
+}
 
+.registerForm p > input[type=submit] {
+  margin-top: 20px;
+}
