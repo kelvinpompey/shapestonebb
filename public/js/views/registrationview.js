@@ -23,7 +23,15 @@ define([
       this.$el.append(navbar.render().el); 
       
       console.log('creating form');
+      
+      var left = $(window).width() / 2 - 100; 
+      var top = $(window).height() / 2 - 100; 
+      
       var form = new FormView({
+        attributes: {
+          style: ['left: ' + left + 'px', 
+                  "top: " + top + 'px'].join(';')
+        }, 
         className: 'registerForm',         
         collection: new FormInputCollection([
           {type: 'text', 'name': 'username', 'label': 'User Name'}, 
