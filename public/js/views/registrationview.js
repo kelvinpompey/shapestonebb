@@ -12,7 +12,7 @@ define([
   var RegistrationView = Backbone.View.extend({
     render: function() {      
       $("body").addClass('registerimage');
-      
+      $(document.body).height($(window).height());      
       var navbar = new NavBar({        
         collection: new ListViewCollection([
           {content: 'Sign-up'}, 
@@ -42,6 +42,16 @@ define([
       }); 
       
       this.$el.append(form.render().el); 
+      
+      var bottomBar = new NavBar({        
+        className: 'bottombar',
+        collection: new ListViewCollection([
+          {content: '&copy; 2008-13 ShapeStone. All rights reserved.'}, 
+          {content: 'Terms of Service', action: '/terms'},
+          {content: 'Privacy Policy/Your Privacy Rights', action: '/privacy'}]) 
+      });      
+      
+      this.$el.append(bottomBar.render().el); 
       return this; 
       
     }  

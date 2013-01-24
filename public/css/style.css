@@ -40,9 +40,29 @@ a {
   padding: 2px; 
 }
 
+.bottombar {
+  position: absolute;
+  right: 0; 
+  bottom: 0;
+  padding: 5px; 
+}
+
+
+.bottombar li.selected {
+  background-color: silver;
+}
+
+.bottombar li {
+  list-style-type: none; 
+  display: inline;
+  margin-left: 10px;
+  padding: 2px; 
+}
+
 .navbar li.selected {
   background-color: silver;
 }
+
 
 .listview li.selected {
 	background-color: silver;

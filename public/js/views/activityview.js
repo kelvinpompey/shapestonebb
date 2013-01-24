@@ -17,7 +17,7 @@ define(['underscore', 'backbone', 'js/viewutils'], function(_, Backbone, ViewUti
 			alert(this.model.get('title'));
 		}
 
-	})
+	});
 
 	return ActivityView; 
 
