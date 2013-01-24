@@ -3,7 +3,7 @@ define([
   'backbone',
   'text!uilib/templates/inputview.html'], function(_, Backbone, InputViewTemplate){
   var InputView = Backbone.View.extend({
-    tagName: 'p',
+    tagName: 'p',    
     initialize: function() {
       this.templateHTML = _.template(InputViewTemplate, this.model.toJSON()); 
       console.log('templateHTML', this.templateHTML); 
