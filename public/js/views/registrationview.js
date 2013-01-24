@@ -35,7 +35,7 @@ define([
         className: 'registerForm',         
         collection: new FormInputCollection([
           {type: 'text', 'name': 'username', 'label': 'User Name'}, 
-          {type: 'text', 'name': 'password', 'label': 'Password'},
+          {type: 'password', 'name': 'password', 'label': 'Password'},
           {type: 'password', 'name': 'password', 'label': 'Password Again'}, 
           {type: 'submit', 'name': 'submit', 'label': 'Submit', content: 'Register'}          
           ])
