@@ -19,8 +19,13 @@ define(['backbone', 'uilib/views/inputview'], function(Backbone, InputView){
     }, 
     
     onSubmit: function(event) {
-      event.preventDefault(); 
-      console.log('onSubmit'); 
+      event.preventDefault();      
+      var obj = {};      
+      this.$el.serialize().split('&').forEach(function(item){
+        var parts = item.split('=');         
+        obj[parts[0]] = parts[1];        
+      }); 
+      Backbone.Events.trigger('formView:submit', this, obj);          
     }
   }); 
   

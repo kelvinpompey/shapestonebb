@@ -12,6 +12,7 @@ define([
   var RegistrationView = Backbone.View.extend({
     initialize: function() {
       Backbone.Events.on('listView:selectionChanged',this.selectionChanged); 
+      Backbone.Events.on('formView:submit', this.submit); 
     }, 
     
     render: function() {      
@@ -40,7 +41,7 @@ define([
         collection: new FormInputCollection([
           {type: 'text', 'name': 'username', 'label': 'User Name'}, 
           {type: 'password', 'name': 'password', 'label': 'Password'},
-          {type: 'password', 'name': 'password', 'label': 'Password Again'}, 
+          {type: 'password', 'name': 'passwordconfirm', 'label': 'Password Again'}, 
           {type: 'submit', 'name': 'submit', 'label': 'Submit', content: 'Register'}          
           ])
       }); 
@@ -62,6 +63,10 @@ define([
     
     selectionChanged: function(sender, model) {
       console.log('selectionChanged', sender.cid, model.get('content'), model.get('action'));
+    }, 
+    
+    submit: function(sender, data) {
+      console.log('form submitted: ', sender.cid, data); 
     }
   }); 
   
